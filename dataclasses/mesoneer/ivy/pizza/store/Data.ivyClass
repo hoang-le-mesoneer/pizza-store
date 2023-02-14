@@ -1,0 +1,8 @@
+Data #class
+mesoneer.ivy.pizza.store #namespace
+foods java.util.List<mesoneer.ivy.pizza.store.entities.Product> #field
+foods PERSISTENT #fieldModifier
+drinks java.util.List<mesoneer.ivy.pizza.store.entities.Product> #field
+drinks PERSISTENT #fieldModifier
+user ch.ivyteam.ivy.security.IUser #field
+user PERSISTENT #fieldModifier

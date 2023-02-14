@@ -1,0 +1,22 @@
+Product #class
+true #isEntity
+mesoneer.ivy.pizza.store.entities #namespace
+product #dbTableName
+id String #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+productSize mesoneer.ivy.pizza.store.enumeration.Size #field
+productSize product_size #dbFieldName
+productSize PERSISTENT #fieldModifier
+productSize NOT_NULLABLE #fieldModifier
+price Integer #field
+price PERSISTENT #fieldModifier
+imageUrl String #field
+imageUrl image_url #dbFieldName
+imageUrl PERSISTENT #fieldModifier
+productType mesoneer.ivy.pizza.store.enumeration.ProductType #field
+productType product_type #dbFieldName
+productType PERSISTENT #fieldModifier

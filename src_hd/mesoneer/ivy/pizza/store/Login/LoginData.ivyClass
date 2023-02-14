@@ -1,0 +1,10 @@
+LoginData #class
+mesoneer.ivy.pizza.store.Login #namespace
+username String #field
+username PERSISTENT #fieldModifier
+password String #field
+password PERSISTENT #fieldModifier
+isValid Boolean #field
+isValid PERSISTENT #fieldModifier
+isLoggedIn Boolean #field
+isLoggedIn PERSISTENT #fieldModifier

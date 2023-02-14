@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<ui:composition>
+	<div>
+		<div class="card" style="margin-top: 16px">
+			<h5 style="text-align: center">ORDER INFOMATION</h5>
+			<div class="ui-fluid">
+				<div class="field grid">
+					<p:outputLabel for="name" styleClass="col-12 md:col-2" value="Name" />
+					<div class="col-12 md:col-10">
+						<p:inputText id="name" value="#{data.order.name}">
+						</p:inputText>
+					</div>
+				</div>
+				<div class="field grid">
+					<p:outputLabel for="phone" styleClass="col-12 md:col-2"
+						value="Phone" />
+					<div class="col-12 md:col-10">
+						<p:inputText type="tel" id="phone"
+							value="#{data.order.phoneNumber}"
+							validatorMessage="Phone number bad format">
+							<f:validateRegex pattern="^([+]?[\d]+){7,14}$" />
+						</p:inputText>
+					</div>
+				</div>
+				<div class="field grid">
+					<p:outputLabel for="address" styleClass="col-12 md:col-2"
+						value="Delivery to" />
+					<div class="col-12 md:col-10">
+						<p:inputText id="address" value="#{data.order.deliveryAddress}">
+						</p:inputText>
+					</div>
+				</div>
+				<div class="field grid">
+					<p:outputLabel for="note" styleClass="col-12 md:col-2" value="Note" />
+					<div class="col-12 md:col-10">
+						<p:inputText id="note" value="#{data.order.description}">
+						</p:inputText>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 16px">
+			<p:dataTable id="items-table" rowIndexVar="index" var="item"
+				value="#{data.order.items}">
+				<p:column headerText="No.">
+					<h:outputText value="#{index + 1}" />
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{item.productName}" />
+				</p:column>
+
+				<p:column headerText="Quantity">
+					<h:outputText value="x#{item.quantity}" />
+				</p:column>
+
+				<p:column headerText="Unit Price">
+					<h:outputText value="$#{item.productPrice}" />
+				</p:column>
+
+				<p:column headerText="Total">
+					<h:outputText
+						value="$#{item.productPrice.intValue() * item.quantity.intValue()}" />
+				</p:column>
+			</p:dataTable>
+
+			<hr />
+
+			<span
+				style="float: right; font-weight: 600; font-size: 20px; margin-right: 20px;">Total:
+				$#{userOrderBean.getTotalCart()}</span>
+		</div>
+		<br />
+	</div>
+</ui:composition>
+</html>

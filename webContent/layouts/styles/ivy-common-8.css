@@ -1,0 +1,178 @@
+/* Basic */
+body {
+	background-color: #fff;
+}
+
+.container {
+	padding: 0 1em;
+	margin: 0 auto;
+	width: 1570px;
+}
+
+.ui-layout-container, .ui-layout-unit, .ui-layout-unit-content {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.ui-g div[class^="ui-g-"], .ui-g div[class^="ui-md-"], .ui-g div[class^="ui-lg-"]
+	{
+	padding: 0.25em;
+}
+
+.container td, .ui-layout-unit-content td {
+	padding: 0.5em;
+}
+
+/* Header */
+.ivy-logo {
+	border-radius: 50%;
+	border: 1px solid black;
+	height: 100px;
+	overflow: hidden;
+}
+
+.ivy-logo img {
+	height: 100%;
+}
+
+.ui-layout-container .ivy-logo img {
+	margin: 4px 25px 4px 0;
+}
+
+.navbar-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+
+.branding {
+	font-size: 40px;
+	font-weight: 800;
+	color: red;
+	margin-left: 20px;
+}
+
+/* Form */
+.container .ui-g .ui-inputfield, .container table .ui-inputfield,
+	.ui-layout-unit-content .ui-inputfield {
+	width: 100%;
+}
+
+@media screen and (min-width: 40.063em) {
+	.container.right-aligned-labels label {
+		float: right;
+		text-align: right;
+	}
+}
+
+.container .top-aligned-label label {
+	margin-bottom: 1em;
+	display: inline-block;
+}
+
+.command-btns {
+	float: right;
+	margin-bottom: 20px;
+}
+
+/* Footer */
+hr {
+	clear: both;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
+.product-item-container {
+	align-items: center;
+	display: inline-block;
+	margin: 8px 38px;
+}
+
+.product-item-container .card {
+	width: 300px;
+	height: 380px;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.product-item-container .card>*:not(img) {
+	padding: 5px 10px;
+}
+
+.product-item-container .card img {
+	width: 100%;
+	height: 180px;
+}
+
+.product-item-container .card-body {
+	padding: 5px;
+}
+
+.product-item-container .row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+
+.product-item-container .card-body p {
+	color: #3d3d3d;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.product-item-container .view-btn a {
+	padding: 5px 15px;
+	border: 1.5px solid #007bff;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #007bff;
+}
+
+.product-item-container .btn-group {
+	display: flex;
+}
+
+.product-item-container .btn-group .btn a {
+	padding: 5px 15px;
+	background-color: #28a745;
+	color: #fff;
+	border-radius: 3px;
+	margin-left: -2px;
+}
+
+.product-item-container .btn-group a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: #000;
+}
+
+.ui-button {
+	background-color: #d34d4d !important;
+}
+
+.product-container {
+	width: 100%;
+	margin: 20px auto;
+}
+
+#order-form-id {
+	width: 100%;
+	margin: 10px auto;
+}
+
+.ui-rating-star a:before {
+	color: yellow;
+}
+
+.ui-rating-star a {
+	text-decoration: none;
+}
+
+a {
+	cursor: pointer;
+}

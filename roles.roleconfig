@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<role>
+    <identifier>Everybody</identifier>
+    <roleMembers/>
+    <role>
+        <identifier>Pizza Store</identifier>
+        <displayName>Pizza Store</displayName>
+        <role>
+            <identifier>Receptionist</identifier>
+            <displayName>Receptionist</displayName>
+        </role>
+        <role>
+            <identifier>Chef</identifier>
+            <displayName>Chef</displayName>
+        </role>
+        <role>
+            <identifier>Delivery</identifier>
+            <displayName>Delivery</displayName>
+        </role>
+    </role>
+</role>

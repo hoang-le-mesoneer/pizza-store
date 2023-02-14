@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseconfigs>
+    <databaseconfig name="pizza-store" url="jdbc:postgresql://localhost:5432/pizza-store" driver="org.postgresql.Driver" user="postgres" password="\u0087\u00AF\u0070\u0062\u0041\u00A9\u0032\u0033\u0036\u008B\u00DE\u005F\u0049\u005E\u000E\u003B\u0071\u0083\u0061\u0008\u00A8\u00A7\u00A5\u00CA\u00DC\u00AE\u0090\u00D4\u00EA\u0050\u0069\u0047\u0023\u0067\u0069\u00A9\u0089\u0077\u0054\u0009\u0091\u005E\u009F\u0000\u006D\u00FC\u0041\u0074"/>
+</databaseconfigs>

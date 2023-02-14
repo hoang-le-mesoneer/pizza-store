@@ -1,0 +1,18 @@
+OrderHandlingData #class
+mesoneer.ivy.pizza.store.OrderHandling #namespace
+orders java.util.List<mesoneer.ivy.pizza.store.entities.Order> #field
+orders PERSISTENT #fieldModifier
+user ch.ivyteam.ivy.security.IUser #field
+user PERSISTENT #fieldModifier
+orderId String #field
+orderId PERSISTENT #fieldModifier
+isAccepted Boolean #field
+isAccepted PERSISTENT #fieldModifier
+role String #field
+role PERSISTENT #fieldModifier
+declinedOrders java.util.List<mesoneer.ivy.pizza.store.entities.Order> #field
+declinedOrders PERSISTENT #fieldModifier
+order mesoneer.ivy.pizza.store.entities.Order #field
+order PERSISTENT #fieldModifier
+deliveredOrders java.util.List<mesoneer.ivy.pizza.store.entities.Order> #field
+deliveredOrders PERSISTENT #fieldModifier

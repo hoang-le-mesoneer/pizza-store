@@ -1,0 +1,29 @@
+Order #class
+true #isEntity
+mesoneer.ivy.pizza.store.entities #namespace
+user_order #dbTableName
+orderId String #field
+orderId Identifier #fieldComment
+orderId order_id #dbFieldName
+orderId PERSISTENT #fieldModifier
+orderId ID #fieldModifier
+deliveryAddress String #field
+deliveryAddress delivery_address #dbFieldName
+deliveryAddress PERSISTENT #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+phoneNumber String #field
+phoneNumber phone_number #dbFieldName
+phoneNumber PERSISTENT #fieldModifier
+description String #field
+description PERSISTENT #fieldModifier
+items java.util.List<mesoneer.ivy.pizza.store.entities.CartItem> #field
+items items #dbFieldName
+items ONE_TO_MANY #fieldAssociation
+items PERSIST MERGE #fieldCascadeTypes
+orderStatus mesoneer.ivy.pizza.store.enumeration.OrderStatus #field
+orderStatus order_status #dbFieldName
+orderStatus PERSISTENT #fieldModifier
+createdAt String #field
+createdAt created_at #dbFieldName
+createdAt PERSISTENT #fieldModifier

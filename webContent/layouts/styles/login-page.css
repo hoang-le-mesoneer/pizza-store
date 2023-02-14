@@ -1,0 +1,12 @@
+.card {
+	width: 50%;
+	margin: 0 auto;
+	gap: 10px;
+	padding: 30px;
+}
+
+.field {
+	gap: 10px;
+	margin-bottom: 16px;
+	box-shadow: 5px 10px #8888888;
+}

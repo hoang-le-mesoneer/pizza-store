@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/basic-8.xhtml">
+		<ui:define name="title">Le PIZZA STORE - Admin</ui:define>
+		<ui:define name="logout-component">
+			<span style="color: green; font-weight: bold">Hello
+				#{data.user.name}.</span>
+			<h:outputText value="&#160;" />
+			<h:outputText value="&#160;" />
+			<h:form>
+				<h:commandLink value="Logout" actionListener="#{logic.logout()}" />
+			</h:form>
+		</ui:define>
+		<ui:define name="content">
+			<div style="margin-top: 16px">
+				<p:tabMenu activeIndex="#{param.i}"
+					style="display: flex; justify-content: center;">
+					<p:menuitem value="Available Orders" outcome="OrderHandling.xhtml"
+						icon="pi pi-fw pi-home">
+						<f:param name="i" value="0" />
+					</p:menuitem>
+					<p:menuitem value="Delivered Orders" outcome="OrderHandling.xhtml"
+						icon="pi pi-fw pi-calendar">
+						<f:param name="i" value="1" />
+					</p:menuitem>
+					<p:menuitem value="Declined Orders" outcome="OrderHandling.xhtml"
+						icon="pi pi-fw pi-calendar">
+						<f:param name="i" value="2" />
+					</p:menuitem>
+				</p:tabMenu>
+
+				<div>
+					<h:panelGroup
+						style="display:#{param.i == 0 || param.i == null ? 'block' : 'none'};">
+						<ui:include src="Orders.xhtml">
+							<ui:param name="orders" value="#{data.orders}" />
+						</ui:include>
+					</h:panelGroup>
+					<h:panelGroup style="display:#{param.i == 1 ? 'block' : 'none'};">
+						<ui:include src="Orders.xhtml">
+							<ui:param name="orders" value="#{data.deliveredOrders}" />
+						</ui:include>
+					</h:panelGroup>
+					<h:panelGroup style="display:#{param.i == 2 ? 'block' : 'none'};">
+						<ui:include src="Orders.xhtml">
+							<ui:param name="orders" value="#{data.declinedOrders}" />
+						</ui:include>
+					</h:panelGroup>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

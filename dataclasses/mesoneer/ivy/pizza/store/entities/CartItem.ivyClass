@@ -1,0 +1,23 @@
+CartItem #class
+true #isEntity
+mesoneer.ivy.pizza.store.entities #namespace
+cart_item #dbTableName
+id String #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+quantity Integer #field
+quantity quantity #dbFieldName
+quantity PERSISTENT #fieldModifier
+productId String #field
+productId product_id #dbFieldName
+productId PERSISTENT #fieldModifier
+orderId String #field
+orderId order_id #dbFieldName
+orderId PERSISTENT #fieldModifier
+productName String #field
+productName product_name #dbFieldName
+productName PERSISTENT #fieldModifier
+productPrice Integer #field
+productPrice product_price #dbFieldName
+productPrice PERSISTENT #fieldModifier

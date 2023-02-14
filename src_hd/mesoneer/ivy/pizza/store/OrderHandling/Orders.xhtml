@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<ui:composition>
+	<div>
+		<p:dataTable class="table-orders" rows="10" paginator="true"
+			paginatorPosition="both"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+			rowIndexVar="index" var="order" value="#{orders}">
+			<p:column width="20" headerText="No.">
+				<h:outputText value="#{index + 1}" />
+			</p:column>
+
+			<p:column headerText="Items" width="200">
+				<ul style="padding: 0 !important;">
+					<ui:repeat value="#{order.items}" var="item">
+						<li style="list-style: none;"><h:outputText value="#{item.productName}">
+							</h:outputText> <h:outputText value="&#160;" /> <h:outputText value="&#160;" />
+							<h:outputText value="&#160;" /> <h:outputText
+								value="x #{item.quantity}">
+							</h:outputText></li>
+					</ui:repeat>
+				</ul>
+			</p:column>
+
+			<p:column headerText="Date" sortBy="#{order.createdAt}">
+				<h:outputText value="#{order.createdAt}">
+					<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+				</h:outputText>
+			</p:column>
+
+			<p:column headerText="Name">
+				<h:outputText value="#{order.name}" />
+			</p:column>
+
+			<p:column headerText="Phone number">
+				<h:outputText value="#{order.phoneNumber}" />
+			</p:column>
+
+			<p:column headerText="Address">
+				<h:outputText value="#{order.deliveryAddress}" />
+			</p:column>
+
+			<p:column headerText="Note">
+				<h:outputText value="#{order.description}" />
+			</p:column>
+			<p:column headerText="Status">
+				<h:outputText value="#{order.orderStatus}"
+					style="font-weight: 600;color:#{orderHandlerBean.setColorForOrderStatus(order.orderStatus)}" />
+			</p:column>
+			<p:column headerText="Actions">
+				<h:form align="left">
+					<h:panelGroup>
+						<p:commandLink disabled="#{param.i == 1 || param.i == 2}"
+							actionListener="#{logic.updateOrder(order.orderId, true, data.user.getRoles()[1].getDisplayName())}"
+							value="Confirm" update='@(.table-orders)' />
+						<span> | </span>
+						<p:commandLink disabled="#{param.i == 1 || param.i == 2}"
+							actionListener="#{logic.updateOrder(order.orderId, false, data.user.getRoles()[1].getDisplayName())}"
+							value="Cancel" update='@(.table-orders)' />
+					</h:panelGroup>
+				</h:form>
+			</p:column>
+		</p:dataTable>
+	</div>
+</ui:composition>
+</html>

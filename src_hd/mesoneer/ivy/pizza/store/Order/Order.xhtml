@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/basic-8.xhtml">
+		<ui:define name="title">Le PIZZA STORE - Homepage</ui:define>
+		<ui:define name="logout-component">
+			<span style="color: green; font-weight: bold">Hello
+				#{data.user.name}.</span>
+			<h:outputText value="&#160;" />
+			<h:outputText value="&#160;" />
+			<h:form>
+				<h:commandLink value="Logout" actionListener="#{logic.logout()}" />
+			</h:form>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="order-form-id">
+				<div class="container">
+					<p:tabMenu activeIndex="#{param.i}"
+						style="display: flex; justify-content: center;">
+						<p:menuitem value="Choose Pizza" outcome="Order.xhtml"
+							icon="pi pi-fw pi-home">
+							<f:param name="i" value="0" />
+						</p:menuitem>
+						<p:menuitem value="Choose Drink" outcome="Order.xhtml"
+							icon="pi pi-fw pi-calendar">
+							<f:param name="i" value="1" />
+						</p:menuitem>
+						<p:menuitem value="Pay and Delivery" outcome="Order.xhtml"
+							icon="pi pi-fw pi-pencil">
+							<f:param name="i" value="2" />
+						</p:menuitem>
+					</p:tabMenu>
+
+					<div>
+						<h:panelGroup
+							style="display:#{param.i == 0 || param.i == null ? 'block' : 'none'};">
+							<ui:include src="Products.xhtml">
+								<ui:param name="products" value="#{data.foods}" />
+							</ui:include>
+						</h:panelGroup>
+						<h:panelGroup style="display:#{param.i == 1 ? 'block' : 'none'};">
+							<ui:include src="Products.xhtml">
+								<ui:param name="products" value="#{data.drinks}" />
+							</ui:include>
+						</h:panelGroup>
+						<h:panelGroup style="display:#{param.i == 2 ? 'block' : 'none'};">
+							<ui:include src="Cart.xhtml">
+							</ui:include>
+						</h:panelGroup>
+					</div>
+				</div>
+				<p:commandButton value="Pay"
+					style="float:right;margin-top: 10px;display:#{param.i == 2 ? 'inline-block' : 'none'};"
+					actionListener="#{logic.order()}" update="order-form-id growl-cart">
+				</p:commandButton>
+			</h:form>
+			<p:growl id="growl-cart" showDetail="true" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
